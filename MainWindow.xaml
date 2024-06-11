@@ -1,0 +1,32 @@
+﻿<Window x:Class="_5_TASKWpfApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_5_TASKWpfApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TabControl Margin="0,0,0,-14">
+            <TabItem x:Name="MainMenu" Header="Главное меню">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem x:Name="Preferences" Header="Настройки">
+                <Grid x:Name="Pref_Window" Background="#FFE5E5E5">
+                    <Label Content="Цвет фона" HorizontalAlignment="Left" Margin="70,32,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.158,-0.19" Background="#FF9E9E9E"/>
+                    <Label Content="Цвет текста" HorizontalAlignment="Left" Margin="70,72,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.158,-0.19" Background="#FF9E9E9E"/>
+                    <Label Content="Размер шрифта" HorizontalAlignment="Left" Margin="70,119,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.158,-0.19" Background="#FF9E9E9E"/>
+                    <Label Content="Стиль шрифта" HorizontalAlignment="Left" Margin="70,168,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.158,-0.19" Background="#FF9E9E9E"/>
+                    <Button x:Name="Save_button" Content="Сохранить" Margin="0,347,0,0" VerticalAlignment="Top" Height="59" Click="Save_button_Click"/>
+                    <TextBox x:Name="fontstyle" HorizontalAlignment="Left" Margin="187,176,0,0" TextWrapping="Wrap" Text="Segoe UI" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="fontsize" HorizontalAlignment="Left" Margin="187,123,0,0" TextWrapping="Wrap" Text="12" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="textcolor" HorizontalAlignment="Left" Margin="187,76,0,0" TextWrapping="Wrap" Text="#FF000000" VerticalAlignment="Top" Width="120"/>
+                    <TextBox x:Name="backgroundcolor" HorizontalAlignment="Left" Margin="187,32,0,0" TextWrapping="Wrap" Text="#FFE5E5E5" VerticalAlignment="Top" Width="120" />
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <TextBlock x:Name="TEXTBLOCK" TextWrapping="Wrap" Text="TEST TEXT  Hello world" VerticalAlignment="Top" Foreground="Black" Margin="561,125,0,0" HorizontalAlignment="Left" Width="154"/>
+
+    </Grid>
+</Window>
