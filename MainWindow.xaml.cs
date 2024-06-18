@@ -1,4 +1,4 @@
-﻿using Microsoft.Win32;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -60,13 +60,7 @@ namespace _5_TASKWpfApp
                 string fontStyle = fontstyle.Text;
                 string fontSize = fontsize.Text;
 
-                // Применяем настройки к элементам
-                TEXTBLOCK.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString(textColor));
-                Pref_Window.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString(backgroundColor));
-                TEXTBLOCK.FontSize = int.Parse(fontSize);
-                TEXTBLOCK.FontFamily = new FontFamily(fontStyle);
-
-                RegistryKey key = Registry.CurrentUser.CreateSubKey(@"SOFTWARE\MyAppSettings");
+                RegistryKey key = Registry.CurrentUser.CreateSubKey("MyKey");
                 key.SetValue("TextColor", textColor);
                 key.SetValue("BackgroundColor", backgroundColor);
                 key.SetValue("FontStyle", fontStyle);
@@ -83,7 +77,7 @@ namespace _5_TASKWpfApp
         {
             try
             {
-                RegistryKey key = Registry.CurrentUser.OpenSubKey(@"SOFTWARE\MyAppSettings");
+                RegistryKey key = Registry.CurrentUser.OpenSubKey("MyKey");
                 if (key != null)
                 {
                     string textColor = (string)key.GetValue("TextColor", "Black");
